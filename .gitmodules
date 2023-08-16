@@ -1,0 +1,3 @@
+[submodule "libappindicator4j/libappindicator"]
+	path = libappindicator4j/libappindicator
+	url = https://git.launchpad.net/ubuntu/+source/libappindicator

@@ -11,6 +11,22 @@ final class constants$4 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$4() {}
+    static final FunctionDescriptor app_indicator_set_ordering_index$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
+    );
+    static final MethodHandle app_indicator_set_ordering_index$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_ordering_index",
+        constants$4.app_indicator_set_ordering_index$FUNC
+    );
+    static final FunctionDescriptor app_indicator_set_secondary_activate_target$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle app_indicator_set_secondary_activate_target$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_secondary_activate_target",
+        constants$4.app_indicator_set_secondary_activate_target$FUNC
+    );
     static final FunctionDescriptor app_indicator_set_title$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -39,20 +55,6 @@ final class constants$4 {
     static final MethodHandle app_indicator_get_status$MH = RuntimeHelper.downcallHandle(
         "app_indicator_get_status",
         constants$4.app_indicator_get_status$FUNC
-    );
-    static final FunctionDescriptor app_indicator_get_icon$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_get_icon$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_icon",
-        constants$4.app_indicator_get_icon$FUNC
-    );
-    static final FunctionDescriptor app_indicator_get_icon_desc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_get_icon_desc$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_icon_desc",
-        constants$4.app_indicator_get_icon_desc$FUNC
     );
 }
 

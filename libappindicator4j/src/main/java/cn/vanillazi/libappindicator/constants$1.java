@@ -23,6 +23,21 @@ final class constants$1 {
         "gtk_menu_item_new_with_label",
         constants$1.gtk_menu_item_new_with_label$FUNC
     );
+    static final FunctionDescriptor gtk_menu_item_set_label$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_item_set_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_set_label",
+        constants$1.gtk_menu_item_set_label$FUNC
+    );
+    static final FunctionDescriptor gtk_menu_item_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_item_get_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_get_label",
+        constants$1.gtk_menu_item_get_label$FUNC
+    );
     static final FunctionDescriptor gtk_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
@@ -38,16 +53,6 @@ final class constants$1 {
     static final MethodHandle gtk_init_check$MH = RuntimeHelper.downcallHandle(
         "gtk_init_check",
         constants$1.gtk_init_check$FUNC
-    );
-    static final FunctionDescriptor gtk_main$FUNC = FunctionDescriptor.ofVoid();
-    static final MethodHandle gtk_main$MH = RuntimeHelper.downcallHandle(
-        "gtk_main",
-        constants$1.gtk_main$FUNC
-    );
-    static final FunctionDescriptor app_indicator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
-    static final MethodHandle app_indicator_get_type$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_type",
-        constants$1.app_indicator_get_type$FUNC
     );
 }
 

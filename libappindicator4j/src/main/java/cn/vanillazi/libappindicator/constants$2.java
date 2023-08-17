@@ -11,6 +11,16 @@ final class constants$2 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$2() {}
+    static final FunctionDescriptor gtk_main$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_main$MH = RuntimeHelper.downcallHandle(
+        "gtk_main",
+        constants$2.gtk_main$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle app_indicator_get_type$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_type",
+        constants$2.app_indicator_get_type$FUNC
+    );
     static final FunctionDescriptor app_indicator_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
@@ -45,23 +55,6 @@ final class constants$2 {
     static final MethodHandle app_indicator_set_attention_icon$MH = RuntimeHelper.downcallHandle(
         "app_indicator_set_attention_icon",
         constants$2.app_indicator_set_attention_icon$FUNC
-    );
-    static final FunctionDescriptor app_indicator_set_attention_icon_full$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_attention_icon_full$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_attention_icon_full",
-        constants$2.app_indicator_set_attention_icon_full$FUNC
-    );
-    static final FunctionDescriptor app_indicator_set_menu$FUNC = FunctionDescriptor.ofVoid(
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_menu$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_menu",
-        constants$2.app_indicator_set_menu$FUNC
     );
 }
 

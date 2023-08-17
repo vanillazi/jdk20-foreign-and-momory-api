@@ -6,10 +6,9 @@ import java.io.File;
 import java.lang.foreign.*;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
-import java.nio.charset.StandardCharsets;
+
 import java.util.concurrent.TimeUnit;
 
-import static java.awt.SystemColor.menu;
 import static java.lang.foreign.ValueLayout.ADDRESS;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,7 +20,16 @@ class AppIndicatorInterfaceTest {
     }
 
     public static void callbackFunction(MemorySegment widget,MemorySegment data){
-        System.out.println("click:"+data.getUtf8String(0));
+        var key=data.getUtf8String(0);
+        System.out.println("click:"+key);
+        var menuItem=widget;
+        var menuItemLabel=AppIndicatorInterface.gtk_menu_item_get_label(menuItem);
+        if(menuItemLabel.getUtf8String(0).contains("-clicked")){
+            AppIndicatorInterface.gtk_menu_item_set_label(menuItem, toNative(key));
+        }else {
+            AppIndicatorInterface.gtk_menu_item_set_label(menuItem, toNative(key + "-clicked"));
+        }
+
     }
 
     @Test

@@ -157,6 +157,8 @@
                                         <includeFunction>gtk_widget_show_all</includeFunction>
                                         <includeFunction>gtk_widget_show</includeFunction>
                                         <includeFunction>g_signal_connect_data</includeFunction>
+                                        <includeFunction>gtk_menu_item_set_label</includeFunction>
+                                        <includeFunction>gtk_menu_item_get_label</includeFunction>
                                     </includeFunctions>
                                     <includeTypedefs>
                                         <includeTypedef>gchar</includeTypedef>

@@ -16,20 +16,6 @@ final class constants$1 {
         "gtk_menu_new",
         constants$1.gtk_menu_new$FUNC
     );
-    static final FunctionDescriptor gtk_signal_connect_full$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_INT$LAYOUT,
-        Constants$root.C_INT$LAYOUT
-    );
-    static final MethodHandle gtk_signal_connect_full$MH = RuntimeHelper.downcallHandle(
-        "gtk_signal_connect_full",
-        constants$1.gtk_signal_connect_full$FUNC
-    );
     static final FunctionDescriptor gtk_menu_item_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
@@ -57,6 +43,11 @@ final class constants$1 {
     static final MethodHandle gtk_main$MH = RuntimeHelper.downcallHandle(
         "gtk_main",
         constants$1.gtk_main$FUNC
+    );
+    static final FunctionDescriptor app_indicator_get_type$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT);
+    static final MethodHandle app_indicator_get_type$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_get_type",
+        constants$1.app_indicator_get_type$FUNC
     );
 }
 

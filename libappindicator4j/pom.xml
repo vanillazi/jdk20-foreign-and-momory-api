@@ -15,8 +15,18 @@
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <linux.headerSearchPath>/usr/include</linux.headerSearchPath>
+        <linux.headerSearchPath.gtk>/usr/include/gtk-2.0</linux.headerSearchPath.gtk>
+        <linux.headerSearchPath.glib>/usr/include/glib-2.0</linux.headerSearchPath.glib>
+        <linux.headerSearchPath.gnu.glib>/usr/lib/x86_64-linux-gnu/glib-2.0/include</linux.headerSearchPath.gnu.glib>
+        <linux.headerSearchPath.cairo>/usr/include/cairo</linux.headerSearchPath.cairo>
+        <linux.headerSearchPath.pango>/usr/include/pango-1.0</linux.headerSearchPath.pango>
+        <linux.headerSearchPath.harfbuzz>/usr/include/harfbuzz</linux.headerSearchPath.harfbuzz>
+        <linux.headerSearchPath.gnu.gtk>/usr/lib/x86_64-linux-gnu/gtk-2.0/include</linux.headerSearchPath.gnu.gtk>
+        <linux.headerSearchPath.gdk.pixbuf>/usr/include/gdk-pixbuf-2.0</linux.headerSearchPath.gdk.pixbuf>
+        <linux.headerSearchPath.atk>/usr/include/atk-1.0</linux.headerSearchPath.atk>
+        <headerFilePath>/usr/include/libappindicator-0.1/libappindicator/app-indicator.h</headerFilePath>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -25,18 +35,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-                <configuration>
-                    <enablePreview>true</enablePreview>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
     <profiles>
         <profile>
             <id>app</id>
@@ -55,9 +54,18 @@
                                     <rules>
                                         <requireFilesExist>
                                             <files>
-                                                <file>${linux.headerSearchPath}</file>
+                                                <file>${linux.headerSearchPath.gtk}</file>
+                                                <file>${linux.headerSearchPath.glib}</file>
+                                                <file>${linux.headerSearchPath.gnu.glib}</file>
+                                                <file>${linux.headerSearchPath.cairo}</file>
+                                                <file>${linux.headerSearchPath.pango}</file>
+                                                <file>${linux.headerSearchPath.harfbuzz}</file>
+                                                <file>${linux.headerSearchPath.gnu.gtk}</file>
+                                                <file>${linux.headerSearchPath.gdk.pixbuf}</file>
+                                                <file>${linux.headerSearchPath.atk}</file>
+                                                <file>${headerFilePath}</file>
                                             </files>
-                                            <message>libc6 headers not found.</message>
+                                            <message>dependency headers not found.</message>
                                         </requireFilesExist>
                                     </rules>
                                 </configuration>
@@ -65,11 +73,12 @@
                         </executions>
                     </plugin>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-clean-plugin</artifactId>
                         <configuration>
                             <filesets>
                                 <fileset>
-                                    <directory>${project.build.sourceDirectory}/org/cryptomator/jfuse/linux/amd64/extr</directory>
+                                    <directory>${project.build.sourceDirectory}/cn/vanillazi/libappindicator</directory>
                                     <includes>
                                         <include>*.java</include>
                                     </includes>
@@ -84,9 +93,6 @@
                         <version>0.3.0</version>
                         <configuration>
                             <executable>/home/vanillazi/app/jextract-20/bin/jextract</executable>
-                            <headerSearchPaths>
-                                <headerSearchPath></headerSearchPath>
-                            </headerSearchPaths>
                             <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
                             <targetPackage>cn.vanillazi.libappindicator</targetPackage>
                         </configuration>
@@ -98,18 +104,17 @@
                                 </goals>
                                 <configuration>
                                     <headerSearchPaths>
-                                        <headerSearchPath>${linux.headerSearchPath}</headerSearchPath>
-                                        <headerSearchPath>/usr/include/gtk-2.0</headerSearchPath>
-                                        <headerSearchPath>/usr/include/glib-2.0</headerSearchPath>
-                                        <headerSearchPath>/usr/lib/x86_64-linux-gnu/glib-2.0/include</headerSearchPath>
-                                        <headerSearchPath>/usr/include/cairo</headerSearchPath>
-                                        <headerSearchPath>/usr/include/pango-1.0</headerSearchPath>
-                                        <headerSearchPath>/usr/include/harfbuzz</headerSearchPath>
-                                        <headerSearchPath>/usr/lib/x86_64-linux-gnu/gtk-2.0/include</headerSearchPath>
-                                        <headerSearchPath>/usr/include/gdk-pixbuf-2.0</headerSearchPath>
-                                        <headerSearchPath>/usr/include/atk-1.0</headerSearchPath>
+                                        <headerSearchPath>${linux.headerSearchPath.gtk}</headerSearchPath>
+                                        <headerSearchPath>${linux.headerSearchPath.glib}</headerSearchPath>
+                                        <headerSearchPath>${linux.headerSearchPath.gnu.glib}</headerSearchPath>
+                                        <headerSearchPath>${linux.headerSearchPath.cairo}</headerSearchPath>
+                                        <headerSearchPath>${linux.headerSearchPath.pango}</headerSearchPath>
+                                        <headerSearchPath>${linux.headerSearchPath.harfbuzz}</headerSearchPath>
+                                        <headerSearchPath>${linux.headerSearchPath.gnu.gtk}</headerSearchPath>
+                                        <headerSearchPath>${linux.headerSearchPath.gdk.pixbuf}</headerSearchPath>
+                                        <headerSearchPath>${linux.headerSearchPath.atk}</headerSearchPath>
                                     </headerSearchPaths>
-                                    <headerFile>/usr/include/libappindicator-0.1/libappindicator/app-indicator.h</headerFile>
+                                    <headerFile>${headerFilePath}</headerFile>
                                     <headerClassName>AppIndicatorInterface</headerClassName>
                                     <includeFunctions>
                                         <includeFunction>app_indicator_get_type</includeFunction>

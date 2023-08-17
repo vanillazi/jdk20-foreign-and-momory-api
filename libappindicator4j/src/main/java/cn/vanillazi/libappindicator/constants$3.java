@@ -11,47 +11,55 @@ final class constants$3 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$3() {}
-    static final FunctionDescriptor app_indicator_get_attention_icon_desc$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor app_indicator_set_menu$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle app_indicator_get_attention_icon_desc$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_attention_icon_desc",
-        constants$3.app_indicator_get_attention_icon_desc$FUNC
+    static final MethodHandle app_indicator_set_menu$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_menu",
+        constants$3.app_indicator_set_menu$FUNC
     );
-    static final FunctionDescriptor app_indicator_get_title$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor app_indicator_set_icon$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle app_indicator_get_title$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_title",
-        constants$3.app_indicator_get_title$FUNC
+    static final MethodHandle app_indicator_set_icon$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_icon",
+        constants$3.app_indicator_set_icon$FUNC
     );
-    static final FunctionDescriptor app_indicator_get_menu$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor app_indicator_set_icon_full$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle app_indicator_get_menu$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_menu",
-        constants$3.app_indicator_get_menu$FUNC
+    static final MethodHandle app_indicator_set_icon_full$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_icon_full",
+        constants$3.app_indicator_set_icon_full$FUNC
     );
-    static final FunctionDescriptor app_indicator_get_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor app_indicator_set_label$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle app_indicator_get_label$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_label",
-        constants$3.app_indicator_get_label$FUNC
+    static final MethodHandle app_indicator_set_label$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_label",
+        constants$3.app_indicator_set_label$FUNC
     );
-    static final FunctionDescriptor app_indicator_get_label_guide$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+    static final FunctionDescriptor app_indicator_set_icon_theme_path$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle app_indicator_get_label_guide$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_label_guide",
-        constants$3.app_indicator_get_label_guide$FUNC
+    static final MethodHandle app_indicator_set_icon_theme_path$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_icon_theme_path",
+        constants$3.app_indicator_set_icon_theme_path$FUNC
     );
-    static final FunctionDescriptor app_indicator_get_ordering_index$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
+    static final FunctionDescriptor app_indicator_set_ordering_index$FUNC = FunctionDescriptor.ofVoid(
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle app_indicator_get_ordering_index$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_ordering_index",
-        constants$3.app_indicator_get_ordering_index$FUNC
+    static final MethodHandle app_indicator_set_ordering_index$MH = RuntimeHelper.downcallHandle(
+        "app_indicator_set_ordering_index",
+        constants$3.app_indicator_set_ordering_index$FUNC
     );
 }
 

@@ -3,6 +3,7 @@
 cd native 
 cargo build
 sudo apt install libappindicator-dev
+nm -D *.so
 ```
 ## References
 1. [JEP 434: Foreign Function & Memory API (Second Preview)](https://openjdk.org/jeps/434)

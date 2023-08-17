@@ -23,6 +23,198 @@ public class AppIndicatorInterface  {
      * }
      */
     public static final OfByte gchar = Constants$root.C_CHAR$LAYOUT;
+    public static MethodHandle g_signal_connect_data$MH() {
+        return RuntimeHelper.requireNonNull(constants$0.g_signal_connect_data$MH,"g_signal_connect_data");
+    }
+    /**
+     * {@snippet :
+     * gulong g_signal_connect_data(gpointer instance, const gchar* detailed_signal, GCallback c_handler, gpointer data, GClosureNotify destroy_data, GConnectFlags connect_flags);
+     * }
+     */
+    public static long g_signal_connect_data(MemorySegment instance, MemorySegment detailed_signal, MemorySegment c_handler, MemorySegment data, MemorySegment destroy_data, int connect_flags) {
+        var mh$ = g_signal_connect_data$MH();
+        try {
+            return (long)mh$.invokeExact(instance, detailed_signal, c_handler, data, destroy_data, connect_flags);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_widget_show$MH() {
+        return RuntimeHelper.requireNonNull(constants$0.gtk_widget_show$MH,"gtk_widget_show");
+    }
+    /**
+     * {@snippet :
+     * void gtk_widget_show(GtkWidget* widget);
+     * }
+     */
+    public static void gtk_widget_show(MemorySegment widget) {
+        var mh$ = gtk_widget_show$MH();
+        try {
+            mh$.invokeExact(widget);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_widget_show_all$MH() {
+        return RuntimeHelper.requireNonNull(constants$0.gtk_widget_show_all$MH,"gtk_widget_show_all");
+    }
+    /**
+     * {@snippet :
+     * void gtk_widget_show_all(GtkWidget* widget);
+     * }
+     */
+    public static void gtk_widget_show_all(MemorySegment widget) {
+        var mh$ = gtk_widget_show_all$MH();
+        try {
+            mh$.invokeExact(widget);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_menu_shell_append$MH() {
+        return RuntimeHelper.requireNonNull(constants$0.gtk_menu_shell_append$MH,"gtk_menu_shell_append");
+    }
+    /**
+     * {@snippet :
+     * void gtk_menu_shell_append(GtkMenuShell* menu_shell, GtkWidget* child);
+     * }
+     */
+    public static void gtk_menu_shell_append(MemorySegment menu_shell, MemorySegment child) {
+        var mh$ = gtk_menu_shell_append$MH();
+        try {
+            mh$.invokeExact(menu_shell, child);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_menu_shell_prepend$MH() {
+        return RuntimeHelper.requireNonNull(constants$0.gtk_menu_shell_prepend$MH,"gtk_menu_shell_prepend");
+    }
+    /**
+     * {@snippet :
+     * void gtk_menu_shell_prepend(GtkMenuShell* menu_shell, GtkWidget* child);
+     * }
+     */
+    public static void gtk_menu_shell_prepend(MemorySegment menu_shell, MemorySegment child) {
+        var mh$ = gtk_menu_shell_prepend$MH();
+        try {
+            mh$.invokeExact(menu_shell, child);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_menu_shell_insert$MH() {
+        return RuntimeHelper.requireNonNull(constants$0.gtk_menu_shell_insert$MH,"gtk_menu_shell_insert");
+    }
+    /**
+     * {@snippet :
+     * void gtk_menu_shell_insert(GtkMenuShell* menu_shell, GtkWidget* child, gint position);
+     * }
+     */
+    public static void gtk_menu_shell_insert(MemorySegment menu_shell, MemorySegment child, int position) {
+        var mh$ = gtk_menu_shell_insert$MH();
+        try {
+            mh$.invokeExact(menu_shell, child, position);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_menu_new$MH() {
+        return RuntimeHelper.requireNonNull(constants$1.gtk_menu_new$MH,"gtk_menu_new");
+    }
+    /**
+     * {@snippet :
+     * GtkWidget* gtk_menu_new();
+     * }
+     */
+    public static MemorySegment gtk_menu_new() {
+        var mh$ = gtk_menu_new$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_signal_connect_full$MH() {
+        return RuntimeHelper.requireNonNull(constants$1.gtk_signal_connect_full$MH,"gtk_signal_connect_full");
+    }
+    /**
+     * {@snippet :
+     * gulong gtk_signal_connect_full(GtkObject* object, const gchar* name, GCallback func, GtkCallbackMarshal unsupported, gpointer data, GDestroyNotify destroy_func, gint object_signal, gint after);
+     * }
+     */
+    public static long gtk_signal_connect_full(MemorySegment object, MemorySegment name, MemorySegment func, MemorySegment unsupported, MemorySegment data, MemorySegment destroy_func, int object_signal, int after) {
+        var mh$ = gtk_signal_connect_full$MH();
+        try {
+            return (long)mh$.invokeExact(object, name, func, unsupported, data, destroy_func, object_signal, after);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_menu_item_new_with_label$MH() {
+        return RuntimeHelper.requireNonNull(constants$1.gtk_menu_item_new_with_label$MH,"gtk_menu_item_new_with_label");
+    }
+    /**
+     * {@snippet :
+     * GtkWidget* gtk_menu_item_new_with_label(const gchar* label);
+     * }
+     */
+    public static MemorySegment gtk_menu_item_new_with_label(MemorySegment label) {
+        var mh$ = gtk_menu_item_new_with_label$MH();
+        try {
+            return (java.lang.foreign.MemorySegment)mh$.invokeExact(label);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_init$MH() {
+        return RuntimeHelper.requireNonNull(constants$1.gtk_init$MH,"gtk_init");
+    }
+    /**
+     * {@snippet :
+     * void gtk_init(int* argc, char*** argv);
+     * }
+     */
+    public static void gtk_init(MemorySegment argc, MemorySegment argv) {
+        var mh$ = gtk_init$MH();
+        try {
+            mh$.invokeExact(argc, argv);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_init_check$MH() {
+        return RuntimeHelper.requireNonNull(constants$1.gtk_init_check$MH,"gtk_init_check");
+    }
+    /**
+     * {@snippet :
+     * gboolean gtk_init_check(int* argc, char*** argv);
+     * }
+     */
+    public static int gtk_init_check(MemorySegment argc, MemorySegment argv) {
+        var mh$ = gtk_init_check$MH();
+        try {
+            return (int)mh$.invokeExact(argc, argv);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle gtk_main$MH() {
+        return RuntimeHelper.requireNonNull(constants$1.gtk_main$MH,"gtk_main");
+    }
+    /**
+     * {@snippet :
+     * void gtk_main();
+     * }
+     */
+    public static void gtk_main() {
+        var mh$ = gtk_main$MH();
+        try {
+            mh$.invokeExact();
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     /**
      * {@snippet :
      * enum .APP_INDICATOR_CATEGORY_APPLICATION_STATUS = 0;
@@ -88,7 +280,7 @@ public class AppIndicatorInterface  {
         return (int)2L;
     }
     public static MethodHandle app_indicator_get_type$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.app_indicator_get_type$MH,"app_indicator_get_type");
+        return RuntimeHelper.requireNonNull(constants$2.app_indicator_get_type$MH,"app_indicator_get_type");
     }
     /**
      * {@snippet :
@@ -104,7 +296,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_new$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.app_indicator_new$MH,"app_indicator_new");
+        return RuntimeHelper.requireNonNull(constants$2.app_indicator_new$MH,"app_indicator_new");
     }
     /**
      * {@snippet :
@@ -120,7 +312,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_new_with_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.app_indicator_new_with_path$MH,"app_indicator_new_with_path");
+        return RuntimeHelper.requireNonNull(constants$2.app_indicator_new_with_path$MH,"app_indicator_new_with_path");
     }
     /**
      * {@snippet :
@@ -136,7 +328,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_set_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.app_indicator_set_status$MH,"app_indicator_set_status");
+        return RuntimeHelper.requireNonNull(constants$2.app_indicator_set_status$MH,"app_indicator_set_status");
     }
     /**
      * {@snippet :
@@ -152,7 +344,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_set_attention_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.app_indicator_set_attention_icon$MH,"app_indicator_set_attention_icon");
+        return RuntimeHelper.requireNonNull(constants$2.app_indicator_set_attention_icon$MH,"app_indicator_set_attention_icon");
     }
     /**
      * {@snippet :
@@ -168,7 +360,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_set_attention_icon_full$MH() {
-        return RuntimeHelper.requireNonNull(constants$0.app_indicator_set_attention_icon_full$MH,"app_indicator_set_attention_icon_full");
+        return RuntimeHelper.requireNonNull(constants$2.app_indicator_set_attention_icon_full$MH,"app_indicator_set_attention_icon_full");
     }
     /**
      * {@snippet :
@@ -183,8 +375,56 @@ public class AppIndicatorInterface  {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+    public static MethodHandle app_indicator_set_menu$MH() {
+        return RuntimeHelper.requireNonNull(constants$3.app_indicator_set_menu$MH,"app_indicator_set_menu");
+    }
+    /**
+     * {@snippet :
+     * void app_indicator_set_menu(AppIndicator* self, GtkMenu* menu);
+     * }
+     */
+    public static void app_indicator_set_menu(MemorySegment self, MemorySegment menu) {
+        var mh$ = app_indicator_set_menu$MH();
+        try {
+            mh$.invokeExact(self, menu);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle app_indicator_set_icon$MH() {
+        return RuntimeHelper.requireNonNull(constants$3.app_indicator_set_icon$MH,"app_indicator_set_icon");
+    }
+    /**
+     * {@snippet :
+     * void app_indicator_set_icon(AppIndicator* self, const gchar* icon_name);
+     * }
+     */
+    public static void app_indicator_set_icon(MemorySegment self, MemorySegment icon_name) {
+        var mh$ = app_indicator_set_icon$MH();
+        try {
+            mh$.invokeExact(self, icon_name);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
+    public static MethodHandle app_indicator_set_icon_full$MH() {
+        return RuntimeHelper.requireNonNull(constants$3.app_indicator_set_icon_full$MH,"app_indicator_set_icon_full");
+    }
+    /**
+     * {@snippet :
+     * void app_indicator_set_icon_full(AppIndicator* self, const gchar* icon_name, const gchar* icon_desc);
+     * }
+     */
+    public static void app_indicator_set_icon_full(MemorySegment self, MemorySegment icon_name, MemorySegment icon_desc) {
+        var mh$ = app_indicator_set_icon_full$MH();
+        try {
+            mh$.invokeExact(self, icon_name, icon_desc);
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
+        }
+    }
     public static MethodHandle app_indicator_set_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.app_indicator_set_label$MH,"app_indicator_set_label");
+        return RuntimeHelper.requireNonNull(constants$3.app_indicator_set_label$MH,"app_indicator_set_label");
     }
     /**
      * {@snippet :
@@ -200,7 +440,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_set_icon_theme_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.app_indicator_set_icon_theme_path$MH,"app_indicator_set_icon_theme_path");
+        return RuntimeHelper.requireNonNull(constants$3.app_indicator_set_icon_theme_path$MH,"app_indicator_set_icon_theme_path");
     }
     /**
      * {@snippet :
@@ -216,7 +456,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_set_ordering_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.app_indicator_set_ordering_index$MH,"app_indicator_set_ordering_index");
+        return RuntimeHelper.requireNonNull(constants$3.app_indicator_set_ordering_index$MH,"app_indicator_set_ordering_index");
     }
     /**
      * {@snippet :
@@ -232,7 +472,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_set_secondary_activate_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.app_indicator_set_secondary_activate_target$MH,"app_indicator_set_secondary_activate_target");
+        return RuntimeHelper.requireNonNull(constants$4.app_indicator_set_secondary_activate_target$MH,"app_indicator_set_secondary_activate_target");
     }
     /**
      * {@snippet :
@@ -248,7 +488,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_set_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.app_indicator_set_title$MH,"app_indicator_set_title");
+        return RuntimeHelper.requireNonNull(constants$4.app_indicator_set_title$MH,"app_indicator_set_title");
     }
     /**
      * {@snippet :
@@ -264,7 +504,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_id$MH() {
-        return RuntimeHelper.requireNonNull(constants$1.app_indicator_get_id$MH,"app_indicator_get_id");
+        return RuntimeHelper.requireNonNull(constants$4.app_indicator_get_id$MH,"app_indicator_get_id");
     }
     /**
      * {@snippet :
@@ -280,7 +520,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_category$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.app_indicator_get_category$MH,"app_indicator_get_category");
+        return RuntimeHelper.requireNonNull(constants$4.app_indicator_get_category$MH,"app_indicator_get_category");
     }
     /**
      * {@snippet :
@@ -296,7 +536,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_status$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.app_indicator_get_status$MH,"app_indicator_get_status");
+        return RuntimeHelper.requireNonNull(constants$4.app_indicator_get_status$MH,"app_indicator_get_status");
     }
     /**
      * {@snippet :
@@ -312,7 +552,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.app_indicator_get_icon$MH,"app_indicator_get_icon");
+        return RuntimeHelper.requireNonNull(constants$4.app_indicator_get_icon$MH,"app_indicator_get_icon");
     }
     /**
      * {@snippet :
@@ -328,7 +568,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_icon_desc$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.app_indicator_get_icon_desc$MH,"app_indicator_get_icon_desc");
+        return RuntimeHelper.requireNonNull(constants$5.app_indicator_get_icon_desc$MH,"app_indicator_get_icon_desc");
     }
     /**
      * {@snippet :
@@ -344,7 +584,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_icon_theme_path$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.app_indicator_get_icon_theme_path$MH,"app_indicator_get_icon_theme_path");
+        return RuntimeHelper.requireNonNull(constants$5.app_indicator_get_icon_theme_path$MH,"app_indicator_get_icon_theme_path");
     }
     /**
      * {@snippet :
@@ -360,7 +600,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_attention_icon$MH() {
-        return RuntimeHelper.requireNonNull(constants$2.app_indicator_get_attention_icon$MH,"app_indicator_get_attention_icon");
+        return RuntimeHelper.requireNonNull(constants$5.app_indicator_get_attention_icon$MH,"app_indicator_get_attention_icon");
     }
     /**
      * {@snippet :
@@ -376,7 +616,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_attention_icon_desc$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.app_indicator_get_attention_icon_desc$MH,"app_indicator_get_attention_icon_desc");
+        return RuntimeHelper.requireNonNull(constants$5.app_indicator_get_attention_icon_desc$MH,"app_indicator_get_attention_icon_desc");
     }
     /**
      * {@snippet :
@@ -392,7 +632,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_title$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.app_indicator_get_title$MH,"app_indicator_get_title");
+        return RuntimeHelper.requireNonNull(constants$5.app_indicator_get_title$MH,"app_indicator_get_title");
     }
     /**
      * {@snippet :
@@ -408,7 +648,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_menu$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.app_indicator_get_menu$MH,"app_indicator_get_menu");
+        return RuntimeHelper.requireNonNull(constants$5.app_indicator_get_menu$MH,"app_indicator_get_menu");
     }
     /**
      * {@snippet :
@@ -424,7 +664,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_label$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.app_indicator_get_label$MH,"app_indicator_get_label");
+        return RuntimeHelper.requireNonNull(constants$6.app_indicator_get_label$MH,"app_indicator_get_label");
     }
     /**
      * {@snippet :
@@ -440,7 +680,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_label_guide$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.app_indicator_get_label_guide$MH,"app_indicator_get_label_guide");
+        return RuntimeHelper.requireNonNull(constants$6.app_indicator_get_label_guide$MH,"app_indicator_get_label_guide");
     }
     /**
      * {@snippet :
@@ -456,7 +696,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_ordering_index$MH() {
-        return RuntimeHelper.requireNonNull(constants$3.app_indicator_get_ordering_index$MH,"app_indicator_get_ordering_index");
+        return RuntimeHelper.requireNonNull(constants$6.app_indicator_get_ordering_index$MH,"app_indicator_get_ordering_index");
     }
     /**
      * {@snippet :
@@ -472,7 +712,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_get_secondary_activate_target$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.app_indicator_get_secondary_activate_target$MH,"app_indicator_get_secondary_activate_target");
+        return RuntimeHelper.requireNonNull(constants$6.app_indicator_get_secondary_activate_target$MH,"app_indicator_get_secondary_activate_target");
     }
     /**
      * {@snippet :
@@ -488,7 +728,7 @@ public class AppIndicatorInterface  {
         }
     }
     public static MethodHandle app_indicator_build_menu_from_desktop$MH() {
-        return RuntimeHelper.requireNonNull(constants$4.app_indicator_build_menu_from_desktop$MH,"app_indicator_build_menu_from_desktop");
+        return RuntimeHelper.requireNonNull(constants$6.app_indicator_build_menu_from_desktop$MH,"app_indicator_build_menu_from_desktop");
     }
     /**
      * {@snippet :

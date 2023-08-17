@@ -11,53 +11,52 @@ final class constants$1 {
 
     // Suppresses default constructor, ensuring non-instantiability.
     private constants$1() {}
-    static final FunctionDescriptor app_indicator_set_label$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_new$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT);
+    static final MethodHandle gtk_menu_new$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_new",
+        constants$1.gtk_menu_new$FUNC
+    );
+    static final FunctionDescriptor gtk_signal_connect_full$FUNC = FunctionDescriptor.of(Constants$root.C_LONG_LONG$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_label$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_label",
-        constants$1.app_indicator_set_label$FUNC
-    );
-    static final FunctionDescriptor app_indicator_set_icon_theme_path$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_set_icon_theme_path$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_icon_theme_path",
-        constants$1.app_indicator_set_icon_theme_path$FUNC
-    );
-    static final FunctionDescriptor app_indicator_set_ordering_index$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_INT$LAYOUT,
         Constants$root.C_INT$LAYOUT
     );
-    static final MethodHandle app_indicator_set_ordering_index$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_ordering_index",
-        constants$1.app_indicator_set_ordering_index$FUNC
+    static final MethodHandle gtk_signal_connect_full$MH = RuntimeHelper.downcallHandle(
+        "gtk_signal_connect_full",
+        constants$1.gtk_signal_connect_full$FUNC
     );
-    static final FunctionDescriptor app_indicator_set_secondary_activate_target$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_menu_item_new_with_label$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
+        Constants$root.C_POINTER$LAYOUT
+    );
+    static final MethodHandle gtk_menu_item_new_with_label$MH = RuntimeHelper.downcallHandle(
+        "gtk_menu_item_new_with_label",
+        constants$1.gtk_menu_item_new_with_label$FUNC
+    );
+    static final FunctionDescriptor gtk_init$FUNC = FunctionDescriptor.ofVoid(
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle app_indicator_set_secondary_activate_target$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_secondary_activate_target",
-        constants$1.app_indicator_set_secondary_activate_target$FUNC
+    static final MethodHandle gtk_init$MH = RuntimeHelper.downcallHandle(
+        "gtk_init",
+        constants$1.gtk_init$FUNC
     );
-    static final FunctionDescriptor app_indicator_set_title$FUNC = FunctionDescriptor.ofVoid(
+    static final FunctionDescriptor gtk_init_check$FUNC = FunctionDescriptor.of(Constants$root.C_INT$LAYOUT,
         Constants$root.C_POINTER$LAYOUT,
         Constants$root.C_POINTER$LAYOUT
     );
-    static final MethodHandle app_indicator_set_title$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_set_title",
-        constants$1.app_indicator_set_title$FUNC
+    static final MethodHandle gtk_init_check$MH = RuntimeHelper.downcallHandle(
+        "gtk_init_check",
+        constants$1.gtk_init_check$FUNC
     );
-    static final FunctionDescriptor app_indicator_get_id$FUNC = FunctionDescriptor.of(Constants$root.C_POINTER$LAYOUT,
-        Constants$root.C_POINTER$LAYOUT
-    );
-    static final MethodHandle app_indicator_get_id$MH = RuntimeHelper.downcallHandle(
-        "app_indicator_get_id",
-        constants$1.app_indicator_get_id$FUNC
+    static final FunctionDescriptor gtk_main$FUNC = FunctionDescriptor.ofVoid();
+    static final MethodHandle gtk_main$MH = RuntimeHelper.downcallHandle(
+        "gtk_main",
+        constants$1.gtk_main$FUNC
     );
 }
 

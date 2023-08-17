@@ -25,10 +25,21 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <enablePreview>true</enablePreview>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <profiles>
         <profile>
-            <id>jextract-linux-amd64</id>
+            <id>app</id>
             <build>
                 <plugins>
                     <plugin>
@@ -73,28 +84,92 @@
                         <version>0.3.0</version>
                         <configuration>
                             <executable>/home/vanillazi/app/jextract-20/bin/jextract</executable>
-                            <headerSearchPaths>${linux.headerSearchPath},/usr/include/gtk-2.0,/usr/include/glib-2.0,/usr/lib/x86_64-linux-gnu/glib-2.0/include,/usr/include/cairo,/usr/include/pango-1.0,/usr/include/harfbuzz,/usr/lib/x86_64-linux-gnu/gtk-2.0/include,/usr/include/gdk-pixbuf-2.0</headerSearchPaths>
+                            <headerSearchPaths>
+                                <headerSearchPath></headerSearchPath>
+                            </headerSearchPaths>
                             <outputDirectory>${project.build.sourceDirectory}</outputDirectory>
                             <targetPackage>cn.vanillazi.libappindicator</targetPackage>
                         </configuration>
                         <executions>
                             <execution>
-                                <id>jextract-fuse</id>
+                                <id>jextract-libappindicator</id>
                                 <goals>
                                     <goal>sources</goal>
                                 </goals>
                                 <configuration>
-                                    <headerFile>${linux.headerSearchPath}/libappindicator-0.1/libappindicator/app-indicator.h</headerFile>
-                                    <headerClassName>appindicator</headerClassName>
+                                    <headerSearchPaths>
+                                        <headerSearchPath>${linux.headerSearchPath}</headerSearchPath>
+                                        <headerSearchPath>/usr/include/gtk-2.0</headerSearchPath>
+                                        <headerSearchPath>/usr/include/glib-2.0</headerSearchPath>
+                                        <headerSearchPath>/usr/lib/x86_64-linux-gnu/glib-2.0/include</headerSearchPath>
+                                        <headerSearchPath>/usr/include/cairo</headerSearchPath>
+                                        <headerSearchPath>/usr/include/pango-1.0</headerSearchPath>
+                                        <headerSearchPath>/usr/include/harfbuzz</headerSearchPath>
+                                        <headerSearchPath>/usr/lib/x86_64-linux-gnu/gtk-2.0/include</headerSearchPath>
+                                        <headerSearchPath>/usr/include/gdk-pixbuf-2.0</headerSearchPath>
+                                        <headerSearchPath>/usr/include/atk-1.0</headerSearchPath>
+                                    </headerSearchPaths>
+                                    <headerFile>/usr/include/libappindicator-0.1/libappindicator/app-indicator.h</headerFile>
+                                    <headerClassName>AppIndicatorInterface</headerClassName>
                                     <includeFunctions>
+                                        <includeFunction>app_indicator_get_type</includeFunction>
                                         <includeFunction>app_indicator_new</includeFunction>
+                                        <includeFunction>app_indicator_new_with_path</includeFunction>
+                                        <includeFunction>app_indicator_set_status</includeFunction>
+                                        <includeFunction>app_indicator_set_attention_icon</includeFunction>
+                                        <includeFunction>app_indicator_set_attention_icon_full</includeFunction>
+                                        <includeFunction>app_indicator_set_menu</includeFunction>
+                                        <includeFunction>app_indicator_set_icon</includeFunction>
+                                        <includeFunction>app_indicator_set_icon_full</includeFunction>
+                                        <includeFunction>app_indicator_set_label</includeFunction>
+                                        <includeFunction>app_indicator_set_icon_theme_path</includeFunction>
+                                        <includeFunction>app_indicator_set_ordering_index</includeFunction>
+                                        <includeFunction>app_indicator_set_secondary_activate_target</includeFunction>
+                                        <includeFunction>app_indicator_set_title</includeFunction>
+                                        <includeFunction>app_indicator_get_id</includeFunction>
+                                        <includeFunction>app_indicator_get_category</includeFunction>
+                                        <includeFunction>app_indicator_get_status</includeFunction>
+                                        <includeFunction>app_indicator_get_icon</includeFunction>
+                                        <includeFunction>app_indicator_get_icon_desc</includeFunction>
+                                        <includeFunction>app_indicator_get_icon_theme_path</includeFunction>
+                                        <includeFunction>app_indicator_get_attention_icon</includeFunction>
+                                        <includeFunction>app_indicator_get_attention_icon_desc</includeFunction>
+                                        <includeFunction>app_indicator_get_title</includeFunction>
+                                        <includeFunction>app_indicator_get_menu</includeFunction>
+                                        <includeFunction>app_indicator_get_label</includeFunction>
+                                        <includeFunction>app_indicator_get_label_guide</includeFunction>
+                                        <includeFunction>app_indicator_get_ordering_index</includeFunction>
+                                        <includeFunction>app_indicator_get_secondary_activate_target</includeFunction>
+                                        <includeFunction>app_indicator_build_menu_from_desktop</includeFunction>
+                                        <includeFunction>gtk_init_check</includeFunction>
+                                        <includeFunction>gtk_init</includeFunction>
+                                        <includeFunction>gtk_main</includeFunction>
+                                        <includeFunction>gtk_menu_new</includeFunction>
+                                        <includeFunction>gtk_menu_item_new_with_label</includeFunction>
+                                        <includeFunction>gtk_menu_shell_append</includeFunction>
+                                        <includeFunction>gtk_menu_shell_prepend</includeFunction>
+                                        <includeFunction>gtk_menu_shell_insert</includeFunction>
+                                        <includeFunction>gtk_widget_show_all</includeFunction>
+                                        <includeFunction>gtk_widget_show</includeFunction>
+                                        <includeFunction>g_signal_connect_data</includeFunction>
                                     </includeFunctions>
                                     <includeTypedefs>
-                                        <includeTypedef>fuse_fill_dir_t</includeTypedef>
+                                        <includeTypedef>gchar</includeTypedef>
+                                        <includeTypedef>GtkWidget</includeTypedef>
+                                        <includeTypedef>AppIndicatorCategory</includeTypedef>
+                                        <includeTypedef>AppIndicatorStatus</includeTypedef>
+                                        <includeTypedef>AppIndicator</includeTypedef>
+                                        <includeTypedef>AppIndicatorClass</includeTypedef>
+                                        <includeTypedef>AppIndicatorPrivate</includeTypedef>
+                                        <includeTypedef>GtkMenu</includeTypedef>
+                                        <includeTypedef>GtkMenuClass</includeTypedef>
                                     </includeTypedefs>
                                     <includeStructs>
                                         <includeStruct>_AppIndicatorClass</includeStruct>
                                         <includeStruct>_AppIndicator</includeStruct>
+                                        <includeStruct>_GtkWidget</includeStruct>
+                                        <includeStruct>_GtkMenu</includeStruct>
+                                        <includeStruct>_GtkMenuClass</includeStruct>
                                     </includeStructs>
                                 </configuration>
                             </execution>
